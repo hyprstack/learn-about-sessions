@@ -25,7 +25,7 @@ Continue reading to further understand how cookies work.**
 
 ##### Types of cookies
 
-There are various types of cookies. Those that are of interest for this tutorial, will be the first three of the following list:
+There are various types of cookies, as shown bellow:
 
 - **Session Cookie** - also known as an _in-memory_ or _transient cookie_, exists only in temporary memory while the user navigates the website.
 Session cookies are created by not setting an *expiry date* or *validity interval* at the cookie creation time and web browsers normally delete
@@ -35,7 +35,17 @@ these cookies when the user closes the browser.
 user preferences, login details, etc. If a persistent cookie has its _Max-Age_ set to one year (for example), then, during that year, the **_initial value_ set in that
 cookie** would be sent back to the server **every time** the user visited the server.
 
-- **Secure Cookie** -
+- **Secure Cookie** - A secure cookie has *secure attribute* enabled and is only used via **HTTPS**. This ensures that
+the cookie is always encrypted when transmitting from client to server. This makes the cookies less likely to be exposed to cookie theft.
+
+- **HttpOnly Cookie** - The HttpOnly attribute is supported by most modern browsers. On a supported browser, an HttpOnly session cookie will be **used _only_** when
+transmitting HTTP (or HTTPS) requests, thus restricting access from other, non-HTTP APIs such as JavaScript. This restriction mitigates but does not eliminate the
+threat of session cookie theft via cross-site scripting (XSS). **This feature applies only to _session-management cookies_**, and not other browser cookies.
+
+- **Third-party Cookie** - First-party cookies are cookies that belong to the same domain that is shown in the browser's address bar (or that belong to the sub
+  domain of the domain in the address bar). Third-party cookies are cookies that belong to domains different from the one shown in the address bar. Web pages can feature
+  content from third-party domains (such as banner ads), which opens up the potential for tracking the user's browsing history. Privacy setting options in most modern browsers
+  allow the blocking of third-party tracking cookies.
 
 
 ---
