@@ -56,6 +56,24 @@ of `.com`, could maliciously affect a request made to `example.com`, even if the
 the cookie in some other locations, such as the local storage available to Flash content, HTML5 storages and other client-side mechanisms, and then recreating the cookie from backup stores
 when the cookie's absence is detected.
 
+##### Cookie Structure
+
+Browsers are expected to support cookies where each cookie has a size of 4KB, at least 50 cookies per domain, and at least 3000 cookies total and consist of seven components:
+
+1 - (name, value) pair of the cookie (i.e. name=value)
+
+2 - Expiry of the cookie
+
+3 - Path the cookie is good for
+
+4 - Domain the cookie is good for
+
+5 - Need for a secure connection to use the cookie
+
+6 - Whether or not the cookie can be accessed through other means than HTTP (i.e., JavaScript)
+
+>The first component **(name, value) _is required_** to be explicitly set.
+
 
 ---
 ### Resources:
