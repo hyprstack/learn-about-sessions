@@ -47,6 +47,15 @@ threat of session cookie theft via cross-site scripting (XSS). **This feature ap
   content from third-party domains (such as banner ads), which opens up the potential for tracking the user's browsing history. Privacy setting options in most modern browsers
   allow the blocking of third-party tracking cookies.
 
+- **Supercookie** - A "supercookie" is a cookie with an origin of a Top-Level Domain (such as `.com`) or a Public Suffix (such as `.co.uk`). It is important that supercookies
+are blocked by browsers, due to the security holes they introduce. If unblocked, an attacker in control of a malicious website could set a supercookie and potentially disrupt or
+impersonate legitimate user requests to another website that shares the same Top-Level Domain or Public Suffix as the malicious website. For example, a supercookie with an origin
+of `.com`, could maliciously affect a request made to `example.com`, even if the cookie did not originate from `example.com`. This can be used to fake logins or change user information.
+
+- **Zombie Cookie** - Some cookies are automatically recreated after a user has deleted them; these are called zombie cookies. This is accomplished by a script storing the content of
+the cookie in some other locations, such as the local storage available to Flash content, HTML5 storages and other client-side mechanisms, and then recreating the cookie from backup stores
+when the cookie's absence is detected.
+
 
 ---
 ### Resources:
