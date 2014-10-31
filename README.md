@@ -173,3 +173,4 @@ its content will not change and a JavaScript code can operate it to identify the
 - Persistent cookies: http://www.allaboutcookies.org/cookies/persistent-cookies-used-for.html
 - User authentication libraries for nodejs: http://stackoverflow.com/questions/3498005/user-authentication-libraries-for-node-js
 - HTTP Authentication: http://en.wikipedia.org/wiki/Basic_access_authentication
+- Session ID: http://en.wikipedia.org/wiki/Session_ID
