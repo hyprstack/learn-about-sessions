@@ -74,6 +74,22 @@ Browsers are expected to support cookies where each cookie has a size of 4KB, at
 
 >The first component **(name, value) _is required_** to be explicitly set.
 
+##### Session Management
+
+Cookies may be used to maintain data related to the user during navigation, possibly across multiple visits. Cookies were introduced to provide a way to implement a "shopping cart" (or "shopping basket"),
+a virtual device into which users can store items they want to purchase as they navigate throughout the site.
+
+Shopping basket applications today usually store the list of basket contents in a database on the server side, rather than storing basket items in the cookie itself. A web server typically sends a cookie
+containing a unique session identifier. The web browser will send back that session identifier with each subsequent request and shopping basket items are stored associated with a unique session identifier.
+
+Allowing users to log into a website is a frequent use of cookies. Typically the web server will first send a cookie containing a unique session identifier. Users then submit their credentials and the web
+application authenticates the session and allows the user access to services.
+
+>Cookies provide a quick and convenient means of client/server interaction. One of the advantages of cookies lies in the fact that they store the user information locally while identifying users simply based
+>on cookie matching. The server's storage and retrieval load is greatly reduced. As a matter of fact, the possibility of applications is endless—any time personal data need to be saved they can be saved as a cookie (Kington, 1997).
+
+
+
 
 ---
 ### Resources:
