@@ -140,6 +140,24 @@ The use of cookies may generate an inconsistency between the state of the client
 The problem with using mobile cookies is that most devices do not implement cookies; for example, Nokia only supports cookies on 60% of its devices, while Motorola only supports cookies on 45% of its phones. In addition, some gateways and networks (Verizon, Alltel, and MetroPCS)
 strip cookies, while other networks simulate cookies on behalf of their mobile devices. There are also dramatic variations in the wireless markets around the world; for example, in the United Kingdom 94% of the devices support wireless cookies, while in the United States only 47% support them.
 
+#### Alternative to Cookies
+
+##### HTTP Authentication
+
+The HTTP protocol includes the basic access authentication and the digest access authentication protocols, which allow access to a web page only when the user has provided the correct username and password. If the server requires such credentials for granting access to a web page,
+the browser requests them from the user and, once obtained, the browser stores and sends them in every subsequent page request. This information can be used to track the user.
+
+##### Web Storage
+
+Some web browsers support a script based on a persistence mechanism, which allows the page to store the information locally for later use. With HTML 5 There are two main web storage types: local storage and session storage, behaving similarly to persistent cookies and session cookies respectively.
+Internet Explorer supports persistent information in the browser's history, favorites, in an XML store ("user data"), or directly within a Web page saved to disk.
+
+##### Cache
+
+Browser cache can also be used to store information that will be used to track the user. Until the cache is cleared, the stored resources are not reloaded. For example, serve a resource `current.js` with a unique content `var userId = 3243242`;. Each times this file will be reloaded from the cache,
+its content will not change and a JavaScript code can operate it to identify the current user.
+
+
 
 ---
 ### Resources:
