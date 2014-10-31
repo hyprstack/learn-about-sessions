@@ -104,6 +104,24 @@ this request is related to the previous one. The server answers by sending the r
 
 The value of a cookie can be modified by the server by sending a new `Set-Cookie: name=newvalue` line in response of a page request. The browser then replaces the old value with the new one.
 
+The value of a cookie may consist of any printable ASCII character (`!` through `~`, unicode `\u0021` through `\u007E`) excluding `,` and `;` and excluding `whitespace`.
+The name of the cookie also excludes = as that is the delimiter between the name and value. The cookie standard RFC2965 is more limiting but not implemented by browsers.
+
+##### Cookie attributes
+
+Besides the name–value pair, servers can also set these cookie attributes: a cookie domain, a path, expiration time or maximum age, Secure flag and HttpOnly flag. Browsers will not send cookie
+attributes back to the server. They will only send the cookie’s name-value pair. Cookie attributes are used by browsers to determine when to delete a cookie, block a cookie or whether to send a cookie (name-value pair) to the servers.
+
+##### Secure and HttpOnly
+
+The Secure and HttpOnly attributes do not have associated values. Rather, the presence of the attribute names indicates that the Secure and HttpOnly behaviors are specified.
+
+The Secure attribute is meant to keep cookie communication limited to encrypted transmission, directing browsers to use cookies only via secure/encrypted connections. If a web server sets a cookie with a secure attribute from a
+non-secure connection, the cookie can still be intercepted when it is sent to the user by man-in-the-middle attacks.
+
+The HttpOnly attribute directs browsers not to expose cookies through channels other than HTTP (and HTTPS) requests. An HttpOnly cookie is not accessible via non-HTTP methods, such as calls via JavaScript (e.g., referencing "document.cookie"),
+and therefore cannot be stolen easily via cross-site scripting (a pervasive attack technique).[37] Among others, Facebook and Google use the HttpOnly attribute extensively.
+
 #### Cookie drawback
 
 Besides privacy concerns, cookies also have some technical drawbacks. In particular, they do not always accurately identify users, they can be used for security attacks, and they are often at odds with the Representational State Transfer
