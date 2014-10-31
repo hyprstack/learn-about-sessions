@@ -4,7 +4,9 @@
 
 ---
 
-Before anything else, to create sessions, it is necessary to understand cookies;
+Before anything else, lets understand cookies:
+
+**(If you do not wish to learn about or already know about cookies skip ahead this section)**
 - what are cookies?
 - how cookies work?
 
@@ -88,7 +90,37 @@ application authenticates the session and allows the user access to services.
 >Cookies provide a quick and convenient means of client/server interaction. One of the advantages of cookies lies in the fact that they store the user information locally while identifying users simply based
 >on cookie matching. The server's storage and retrieval load is greatly reduced. As a matter of fact, the possibility of applications is endless—any time personal data need to be saved they can be saved as a cookie (Kington, 1997).
 
+#### Setting a cookie
 
+1 - Transfer of Web pages follows the HyperText Transfer Protocol (HTTP). Regardless of cookies, browsers request a page from web servers by sending them a usually short text called 'HTTP request'.
+
+2 - The server replies by sending the requested page preceded by a similar packet of text, called 'HTTP response'. This packet may contain lines requesting the browser to store cookies.
+
+3 - The server sends lines of Set-Cookie only if the server wishes the browser to store cookies. `Set-Cookie` is a directive for the browser to store the cookie and send it back in future requests to the server
+(subject to expiration time or other cookie attributes), if the browser supports cookies and cookies are enabled.
+
+This is a request for another page from the same server, and differs from the first one above because it contains the string that the server has previously sent to the browser. This way, the server knows that
+this request is related to the previous one. The server answers by sending the requested page, possibly adding other cookies as well.
+
+The value of a cookie can be modified by the server by sending a new `Set-Cookie: name=newvalue` line in response of a page request. The browser then replaces the old value with the new one.
+
+#### Cookie drawback
+
+Besides privacy concerns, cookies also have some technical drawbacks. In particular, they do not always accurately identify users, they can be used for security attacks, and they are often at odds with the Representational State Transfer
+(REST) software architectural style.
+
+##### Inaccurate identification
+
+If more than one browser is used on a computer, each usually has a separate storage area for cookies.
+
+##### Inconsistent state on client and server
+
+The use of cookies may generate an inconsistency between the state of the client and the state as stored in the cookie. If the user acquires a cookie and then clicks the "Back" button of the browser, the state on the browser is generally not the same as before that acquisition.
+
+##### Inconsistent support by devices
+
+The problem with using mobile cookies is that most devices do not implement cookies; for example, Nokia only supports cookies on 60% of its devices, while Motorola only supports cookies on 45% of its phones. In addition, some gateways and networks (Verizon, Alltel, and MetroPCS)
+strip cookies, while other networks simulate cookies on behalf of their mobile devices. There are also dramatic variations in the wireless markets around the world; for example, in the United Kingdom 94% of the devices support wireless cookies, while in the United States only 47% support them.
 
 
 ---
@@ -104,3 +136,4 @@ application authenticates the session and allows the user access to services.
 - Session cookies: http://www.allaboutcookies.org/cookies/session-cookies-used-for.html
 - Persistent cookies: http://www.allaboutcookies.org/cookies/persistent-cookies-used-for.html
 - User authentication libraries for nodejs: http://stackoverflow.com/questions/3498005/user-authentication-libraries-for-node-js
+- HTTP Authentication: http://en.wikipedia.org/wiki/Basic_access_authentication
