@@ -157,6 +157,23 @@ Internet Explorer supports persistent information in the browser's history, favo
 Browser cache can also be used to store information that will be used to track the user. Until the cache is cleared, the stored resources are not reloaded. For example, serve a resource `current.js` with a unique content `var userId = 3243242`;. Each times this file will be reloaded from the cache,
 its content will not change and a JavaScript code can operate it to identify the current user.
 
+---
+
+## Sessions
+
+When creating a session, we need a user first, and this user needs a means to be authenticated and recognised as the user. Only once we have defined and registered a user can we proceed to creating sessions.
+
+### Saving and loading users
+
+When defining users there a few steps necessary to take. These are the barebones of those steps:
+
+- Create a user model (Object);
+- Add logic to load and sabe user data using you prefered database;
+- Secure user passwords (using bcrypt - https://www.npmjs.org/package/bcrypt);
+- Add logic to authenticate attempts to log in (hapi has several plugins for this http://hapijs.com/plugins#Authentication);
+
+### Authenticating users
+
 
 
 ---
@@ -174,3 +191,6 @@ its content will not change and a JavaScript code can operate it to identify the
 - User authentication libraries for nodejs: http://stackoverflow.com/questions/3498005/user-authentication-libraries-for-node-js
 - HTTP Authentication: http://en.wikipedia.org/wiki/Basic_access_authentication
 - Session ID: http://en.wikipedia.org/wiki/Session_ID
+- SOAP (Simple Object Access Protocol): http://en.wikipedia.org/wiki/SOAP
+- How to safely store a password: http://codahale.com/how-to-safely-store-a-password/
+- BCRYPT: http://en.wikipedia.org/wiki/Bcrypt
